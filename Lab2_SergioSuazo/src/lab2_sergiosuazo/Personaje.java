@@ -87,6 +87,39 @@ public class Personaje {
         this.nacionalidad = nacionalidad;
     }
 
+    public int getHP() {
+        return HP;
+    }
+
+    public void setHP(int HP) {
+        this.HP = HP;
+    }
+
+    public int getCS() {
+        return CS;
+    }
+
+    public void setCS(int CS) {
+        this.CS = CS;
+    }
+
+    public int getAC() {
+        return AC;
+    }
+
+    public void setAC(int AC) {
+        this.AC = AC;
+    }
+
+    public int getDG() {
+        return DG;
+    }
+
+    public void setDG(int DG) {
+        this.DG = DG;
+    }
+    
+
     @Override
     public String toString() {
         return "Personaje{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", clase=" + clase + ", estatura=" + estatura + ", peso=" + peso + ", edad=" + edad + ", raza=" + raza + ", nacionalidad=" + nacionalidad + ", HP=" + HP + ", CS=" + CS + ", AC=" + AC + ", DG=" + DG + '}';

@@ -124,10 +124,21 @@ public class Lab2_SergioSuazo {
                 }
                 case 3:
                 {
+                    int i;
+                    printArrayList(personajes);
+                    System.out.print("Seleccione el personaje del cual desea ver los atributos: ");
+                    i=leer.nextInt();
+                    System.out.println(personajes.get(i));
                     break;
                 }
                 case 4:
                 {
+                    int i;
+                    printArrayList(personajes);
+                    System.out.print("Seleccione el personaje que desea eliminar: ");
+                    i=leer.nextInt();
+                    personajes.remove(i);
+                    System.out.println("Se elimino exitosamente!");
                     break;
                 }
                 case 5:
@@ -142,6 +153,71 @@ public class Lab2_SergioSuazo {
         for (int i = 0; i < a.size(); i++) 
         {
             System.out.println(i+". "+a.get(i).getNombre());
+        }
+    }
+    public static void Combate(Personaje a,Personaje b)
+    {
+        while(a.getHP()>0||b.getHP()>0)
+        {
+            //Jugada del jugador
+            int jugada;
+            System.out.println("1.Atacar\n"
+                    + "2.Defender\n"
+                    + "Seleccione su jugada: ");
+            jugada=leer.nextInt();
+            //Jugada maquina
+            int jugada2;
+            jugada2=1+rand.nextInt(2);
+            //definicion de tu jugada
+            if(jugada==1)
+            {
+                System.out.println("Has atacado");
+            }
+            else
+            {
+                System.out.println("Has defendido");
+            }
+            //Maquina se defendio
+            if(jugada2==2)
+            {
+                b.setAC(b.getAC()+15);
+                System.out.println("La maquina se defiende");
+                
+            }
+            //Attaque jugador
+            if(jugada==1)
+            {
+                int att;
+                att=1+rand.nextInt(100);
+                if(att>b.getAC())
+                {
+                    b.setHP(b.getHP()-a.getDG());
+                    System.out.println("El ataque fue exitoso");
+                }
+                else
+                {
+                    System.out.println("El ataque fallo!");
+                }
+            }
+            else if(jugada==2)
+            {
+                a.setAC(a.getAC()+15);
+            }
+            //Ataque de la maquina
+            if(jugada2==1)
+            {
+                int att;
+                att=1+rand.nextInt(100);
+                if(att>a.getAC())
+                {
+                    a.setHP(a.getHP()-b.getDG());
+                    System.out.println("El ataque de la maquina fue exitoso");
+                }
+                else
+                {
+                    System.out.println("El ataque de la maquinan fallo!");
+                }
+            }
         }
     }
 }
