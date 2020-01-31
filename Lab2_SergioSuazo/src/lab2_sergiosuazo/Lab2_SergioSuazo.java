@@ -78,11 +78,14 @@ public class Lab2_SergioSuazo {
                     System.out.print("Selecicone cual desea modificar: ");
                     i=leer.nextInt();
                     int mod;
-                    System.out.print("1.Nombre"
+                    System.out.print("1.Nombre\n"
                             + "2.Descripcion\n"
                             + "3.Estatura\n"
                             + "4.Peso\n"
                             + "5.Edad\n"
+                            + "6.Clase\n"
+                            + "7.Nacionalidad\n"
+                            + "8.Raza\n"
                             + "Seleccione que atributo modificar: ");
                     mod=leer.nextInt();
                     switch(mod)
@@ -127,6 +130,44 @@ public class Lab2_SergioSuazo {
                             personajes.get(i).setEdad(edad);
                             break;
                         }
+                        case 6:
+                        {
+                            int clase;
+                            System.out.print("1.Clerigo\n"
+                            + "2.Barbaro\n"
+                            + "3.Mago\n"
+                            + "4.Picaro\n"
+                            + "Seleccione la nueva clase del personaje: ");
+                            clase=leer.nextInt();
+                            personajes.get(i).setClase(clase);
+                            break;
+                        }
+                        case 7:
+                        {
+                            int nacionalidad;
+                            System.out.print("1.Norfair\n"
+                            + "2.Brinstar\n"
+                            + "3.Maridia\n"
+                            + "4.Zebes\n"
+                            + "5.Crateria\n"
+                            + "Seleccione la nueva nacionalidad: ");
+                            nacionalidad=leer.nextInt();
+                            personajes.get(i).setNacionalidad(nacionalidad);
+                            break;
+                        }
+                        case 8:
+                        {
+                            int raza;
+                            System.out.print("1.Mediano\n"
+                            + "2.Enano\n"
+                            + "3.Elfo\n"
+                            + "4.Humano\n"
+                            + "Seleccione la nueva raza: ");
+                            raza=leer.nextInt();
+                            personajes.get(i).setRaza(raza);
+                            break;
+                        }
+                        
                     }
                     System.out.println("Se cambio el atributo correctamente!");
                     break;
@@ -152,6 +193,13 @@ public class Lab2_SergioSuazo {
                 }
                 case 5:
                 {
+                    int i,j;
+                    printArrayList(personajes);
+                    System.out.print("Elija su jugador: ");
+                    i=leer.nextInt();
+                    System.out.print("Elija la maquina: ");
+                    j=leer.nextInt();
+                    Combate(personajes.get(i), personajes.get(j));
                     break;
                 }
             }
@@ -168,6 +216,16 @@ public class Lab2_SergioSuazo {
     {
         while(a.getHP()>0||b.getHP()>0)
         {
+            //Estadisticas
+            System.out.print("Tu vida: ");
+            System.out.println(a.getHP());
+            System.out.print("Tu AC: ");
+            System.out.println(a.getAC());
+            System.out.print("Vida de la maquina: ");
+            System.out.println(b.getHP());
+            System.out.print("AC de la maquina: ");
+            System.out.println(b.getAC());
+
             //Jugada del jugador
             int jugada;
             System.out.println("1.Atacar\n"
@@ -204,30 +262,33 @@ public class Lab2_SergioSuazo {
                     {
                         b.setHP(b.getHP()-(a.getDG()*2));
                         System.out.println("Golpe Critico!");
+                        System.out.println("Inflijiste "+ a.getDG()*2+" de daño");
                     }
                     else
                     {
                         b.setHP(b.getHP()-a.getDG());
+                        System.out.println("Inflijiste "+ a.getDG()+" de daño");
                     }
-                    System.out.println("El ataque fue exitoso");
+                    System.out.println("Tu ataque fue exitoso");
                 }
                 else
                 {
-                    System.out.println("El ataque fallo!");
+                    System.out.println("Tu ataque fallo!");
                 }
+            }
+            else if(jugada==2)
+            {
+                a.setAC(a.getAC()+15);
             }
             if(b.getHP()<=0)
             {
                 System.out.println("La maquina se quedo sin HP, has ganado!");
                 break;
             }
-            else if(jugada==2)
-            {
-                a.setAC(a.getAC()+15);
-            }
             //Ataque de la maquina
             if(jugada2==1)
             {
+                System.out.println("La maquina ataca");
                 int att;
                 att=1+rand.nextInt(100);
                 if(att>a.getAC())
@@ -236,10 +297,12 @@ public class Lab2_SergioSuazo {
                     {
                         a.setHP(a.getHP()-(b.getDG()*2));
                         System.out.println("Golpe critico!");
+                        System.out.println("Recibiste "+ b.getDG()*2+" de daño");
                     }
                     else
                     {
                         a.setHP(a.getHP()-b.getDG());
+                        System.out.println("Recibiste "+ b.getDG()+" de daño");
                     }
                     System.out.println("El ataque de la maquina fue exitoso");
                 }
@@ -252,6 +315,14 @@ public class Lab2_SergioSuazo {
             {
                 System.out.println("Te quedaste sin HP, has perdido!");
                 break;
+            }
+            if(jugada==2)
+            {
+                a.setAC(a.getAC()-15);
+            }
+            if(jugada2==2)
+            {
+                b.setAC(b.getAC()-15);
             }
         }
     }

@@ -248,7 +248,7 @@ public class Personaje {
                 break;
             }
         }
-        return  "nombre=" + nombre + ", descripcion=" + descripcion + ", clase=" + c + ", estatura=" + estatura + ", peso=" + peso + ", edad=" + edad + ", raza=" + r + ", nacionalidad=" + n + ", HP=" + HP + ", CS=" + CS + ", AC=" + AC + ", DG=" + DG ;
+        return  "nombre=" + nombre + "\ndescripcion=" + descripcion + "\nclase=" + c + "\nestatura=" + estatura + "\npeso=" + peso + "\nedad=" + edad + "\nraza=" + r + "\nnacionalidad=" + n + "\nHP=" + HP + "\nCS=" + CS + "\nAC=" + AC + "\nDG=" + DG ;
     }
     
     
