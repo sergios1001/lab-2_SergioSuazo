@@ -1,38 +1,34 @@
 
 package lab2_sergiosuazo;
 
+import java.util.Random;
+
 public class Personaje {
-    String clase,raza,descripcion,nacionalidad;
-    int estatura,peso,edad;
-    int HP,CS,AC,DG;
+    static Random rand=new Random();
+    private String nombre,descripcion;
+    private int clase,estatura,peso,edad,raza,nacionalidad;
+    private int HP,CS,AC,DG;
 
     public Personaje() {
     }
 
-    public Personaje(String clase, String raza, String descripcion, String nacionalidad, int estatura, int peso, int edad) {
-        this.clase = clase;
-        this.raza = raza;
+    public Personaje(String nombre, String descripcion, int clase, int estatura, int peso, int edad, int raza, int nacionalidad) {
+        this.nombre = nombre;
         this.descripcion = descripcion;
-        this.nacionalidad = nacionalidad;
+        this.clase = clase;
         this.estatura = estatura;
         this.peso = peso;
         this.edad = edad;
-    }
-
-    public String getClase() {
-        return clase;
-    }
-
-    public void setClase(String clase) {
-        this.clase = clase;
-    }
-
-    public String getRaza() {
-        return raza;
-    }
-
-    public void setRaza(String raza) {
         this.raza = raza;
+        this.nacionalidad = nacionalidad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
@@ -43,12 +39,12 @@ public class Personaje {
         this.descripcion = descripcion;
     }
 
-    public String getNacionalidad() {
-        return nacionalidad;
+    public int getClase() {
+        return clase;
     }
 
-    public void setNacionalidad(String nacionalidad) {
-        this.nacionalidad = nacionalidad;
+    public void setClase(int clase) {
+        this.clase = clase;
     }
 
     public int getEstatura() {
@@ -74,5 +70,28 @@ public class Personaje {
     public void setEdad(int edad) {
         this.edad = edad;
     }
+
+    public int getRaza() {
+        return raza;
+    }
+
+    public void setRaza(int raza) {
+        this.raza = raza;
+    }
+
+    public int getNacionalidad() {
+        return nacionalidad;
+    }
+
+    public void setNacionalidad(int nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
+
+    @Override
+    public String toString() {
+        return "Personaje{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", clase=" + clase + ", estatura=" + estatura + ", peso=" + peso + ", edad=" + edad + ", raza=" + raza + ", nacionalidad=" + nacionalidad + ", HP=" + HP + ", CS=" + CS + ", AC=" + AC + ", DG=" + DG + '}';
+    }
     
+    
+ 
 }
