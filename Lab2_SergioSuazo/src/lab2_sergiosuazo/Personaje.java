@@ -21,6 +21,57 @@ public class Personaje {
         this.edad = edad;
         this.raza = raza;
         this.nacionalidad = nacionalidad;
+        switch(clase)
+        {
+            case 1:
+            {
+                CS=97;
+                AC=40;
+                DG=5+rand.nextInt(15);
+                break;
+            }
+            case 2:
+            {
+                CS=93;
+                AC=65;
+                DG=15+rand.nextInt(30);
+                break;
+                
+            }
+            case 3:
+            {
+                CS=101;
+                AC=20;
+                DG=5+rand.nextInt(10);
+                break;
+            }
+            case 4:
+            {
+                CS=80;
+                AC=50;
+                DG=15+rand.nextInt(25);
+                break;
+            }
+        }
+        switch(raza)
+        {
+            case 1:
+            {
+                HP=50+rand.nextInt(60);
+            }
+            case 2:
+            {
+                HP=80+rand.nextInt(100);
+            }
+            case 3:
+            {
+                HP=50+rand.nextInt(70);
+            }
+            case 4:
+            {
+                HP=40+rand.nextInt(75);
+            }
+        }
     }
 
     public String getNombre() {
@@ -122,7 +173,82 @@ public class Personaje {
 
     @Override
     public String toString() {
-        return "Personaje{" + "nombre=" + nombre + ", descripcion=" + descripcion + ", clase=" + clase + ", estatura=" + estatura + ", peso=" + peso + ", edad=" + edad + ", raza=" + raza + ", nacionalidad=" + nacionalidad + ", HP=" + HP + ", CS=" + CS + ", AC=" + AC + ", DG=" + DG + '}';
+        String c="",n="",r="";
+        switch(raza)
+        {
+            case 1:
+            {
+                r="Mediano";
+                break;
+            }
+            case 2:
+            {
+                r="Enano";
+                break;
+            }
+            case 3:
+            {
+                r="Elfo";
+                break;
+            }
+            case 4:
+            {
+                r="Humano";
+                break;
+            }
+        }
+        switch(nacionalidad)
+        {
+            case 1:
+            {
+                n="Norfair";
+                break;
+            }
+            case 2:
+            {
+                n="Brinstar";
+                break;
+            }
+            case 3:
+            {
+                n="Maridia";
+                break;
+            }
+            case 4:
+            {
+                n="Zebes";
+                break;
+            }
+            case 5:
+            {
+                n="Crateria";
+                break;
+            }
+        }
+        switch(clase)
+        {
+            case 1:
+            {
+                c="Clerigo";
+                break;
+            }
+            case 2:
+            {
+                c="Barbaro";
+                break;
+            }
+            case 3:
+            {
+                c="Mago";
+                break;
+            }
+            case 4:
+            {
+                c="Picaro";
+                break;
+            }
+        }
+        return  "nombre=" + nombre + ", descripcion=" + descripcion + ", clase=" + c + ", estatura=" + estatura + ", peso=" + peso + ", edad=" + edad + ", raza=" + r + ", nacionalidad=" + n + ", HP=" + HP + ", CS=" + CS + ", AC=" + AC + ", DG=" + DG ;
     }
     
     

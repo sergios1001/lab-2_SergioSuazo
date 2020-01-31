@@ -12,6 +12,14 @@ public class Lab2_SergioSuazo {
     public static void main(String[] args) {
         int opcion=0;
         ArrayList<Personaje> personajes=new ArrayList<>();
+        Personaje a=new Personaje("Sergio", "...",1, 182, 208, 22, 3, 2);
+        Personaje b=new Personaje("Alessandro", "...",2, 176, 180, 19, 2, 5);
+        Personaje c=new Personaje("Diego", "El mejor instructor de progra",3, 170, 175, 21, 1, 3);
+        Personaje d=new Personaje("Leo", "El otro mejor instructor de progra xd",4, 180, 190, 21, 4, 4);
+        personajes.add(a);
+        personajes.add(b);
+        personajes.add(c);
+        personajes.add(d);
         while (opcion!=6)
         {
             System.out.print("1.Creacion de personajes\n"
@@ -37,7 +45,8 @@ public class Lab2_SergioSuazo {
                     System.out.print("1.Norfair\n"
                             + "2.Brinstar\n"
                             + "3.Maridia\n"
-                            + "4.Crateria\n"
+                            + "4.Zebes\n"
+                            + "5.Crateria\n"
                             + "Seleccione la nacinalidad: ");
                     nacionalidad=leer.nextInt();
                     System.out.print("1.Mediano\n"
@@ -191,13 +200,26 @@ public class Lab2_SergioSuazo {
                 att=1+rand.nextInt(100);
                 if(att>b.getAC())
                 {
-                    b.setHP(b.getHP()-a.getDG());
+                    if(att>a.getCS())
+                    {
+                        b.setHP(b.getHP()-(a.getDG()*2));
+                        System.out.println("Golpe Critico!");
+                    }
+                    else
+                    {
+                        b.setHP(b.getHP()-a.getDG());
+                    }
                     System.out.println("El ataque fue exitoso");
                 }
                 else
                 {
                     System.out.println("El ataque fallo!");
                 }
+            }
+            if(b.getHP()<=0)
+            {
+                System.out.println("La maquina se quedo sin HP, has ganado!");
+                break;
             }
             else if(jugada==2)
             {
@@ -210,13 +232,26 @@ public class Lab2_SergioSuazo {
                 att=1+rand.nextInt(100);
                 if(att>a.getAC())
                 {
-                    a.setHP(a.getHP()-b.getDG());
+                    if(att>b.getCS())
+                    {
+                        a.setHP(a.getHP()-(b.getDG()*2));
+                        System.out.println("Golpe critico!");
+                    }
+                    else
+                    {
+                        a.setHP(a.getHP()-b.getDG());
+                    }
                     System.out.println("El ataque de la maquina fue exitoso");
                 }
                 else
                 {
                     System.out.println("El ataque de la maquinan fallo!");
                 }
+            }
+            if(a.getHP()<=0)
+            {
+                System.out.println("Te quedaste sin HP, has perdido!");
+                break;
             }
         }
     }
