@@ -64,7 +64,62 @@ public class Lab2_SergioSuazo {
                 }
                 case 2:
                 {
-                    
+                    printArrayList(personajes);
+                    int i;
+                    System.out.print("Selecicone cual desea modificar: ");
+                    i=leer.nextInt();
+                    int mod;
+                    System.out.print("1.Nombre"
+                            + "2.Descripcion\n"
+                            + "3.Estatura\n"
+                            + "4.Peso\n"
+                            + "5.Edad\n"
+                            + "Seleccione que atributo modificar: ");
+                    mod=leer.nextInt();
+                    switch(mod)
+                    {
+                        case 1:
+                        {
+                            String nombre;
+                            System.out.print("Nuevo nombre: ");
+                            nombre=leer.next();
+                            personajes.get(i).setNombre(nombre);
+                            break;
+                        }
+                        case 2:
+                        {
+                            String descripcion;
+                            System.out.print("Nueva descripcion: ");
+                            descripcion=leer.next();
+                            personajes.get(i).setDescripcion(descripcion);
+                            break;
+                        }
+                        case 3:
+                        {
+                            int estatura;
+                            System.out.print("Nueva estatura: ");
+                            estatura=leer.nextInt();
+                            personajes.get(i).setEstatura(estatura);
+                            break;
+                        }
+                        case 4:
+                        {
+                            int peso;
+                            System.out.print("Nuevo peso: ");
+                            peso=leer.nextInt();
+                            personajes.get(i).setPeso(peso);
+                            break;
+                        }
+                        case 5:
+                        {
+                            int edad;
+                            System.out.print("Nueva edad: ");
+                            edad=leer.nextInt();
+                            personajes.get(i).setEdad(edad);
+                            break;
+                        }
+                    }
+                    System.out.println("Se cambio el atributo correctamente!");
                     break;
                 }
                 case 3:
@@ -82,5 +137,11 @@ public class Lab2_SergioSuazo {
             }
         }
     }
-    
+    public static void printArrayList(ArrayList<Personaje> a)
+    {
+        for (int i = 0; i < a.size(); i++) 
+        {
+            System.out.println(i+". "+a.get(i).getNombre());
+        }
+    }
 }
