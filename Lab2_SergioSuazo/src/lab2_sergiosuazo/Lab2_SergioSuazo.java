@@ -316,6 +316,7 @@ public class Lab2_SergioSuazo {
                 System.out.println("Te quedaste sin HP, has perdido!");
                 break;
             }
+            //reseteo de la armadura
             if(jugada==2)
             {
                 a.setAC(a.getAC()-15);

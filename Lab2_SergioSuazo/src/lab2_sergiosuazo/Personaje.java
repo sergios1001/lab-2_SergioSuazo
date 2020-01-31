@@ -27,14 +27,14 @@ public class Personaje {
             {
                 CS=97;
                 AC=40;
-                DG=5+rand.nextInt(15);
+                DG=5+rand.nextInt(11);
                 break;
             }
             case 2:
             {
                 CS=93;
                 AC=65;
-                DG=15+rand.nextInt(30);
+                DG=15+rand.nextInt(16);
                 break;
                 
             }
@@ -42,14 +42,14 @@ public class Personaje {
             {
                 CS=101;
                 AC=20;
-                DG=5+rand.nextInt(10);
+                DG=5+rand.nextInt(6);
                 break;
             }
             case 4:
             {
                 CS=80;
                 AC=50;
-                DG=15+rand.nextInt(25);
+                DG=15+rand.nextInt(11);
                 break;
             }
         }
@@ -57,19 +57,19 @@ public class Personaje {
         {
             case 1:
             {
-                HP=50+rand.nextInt(60);
+                HP=50+rand.nextInt(11);
             }
             case 2:
             {
-                HP=80+rand.nextInt(100);
+                HP=80+rand.nextInt(21);
             }
             case 3:
             {
-                HP=50+rand.nextInt(70);
+                HP=50+rand.nextInt(21);
             }
             case 4:
             {
-                HP=40+rand.nextInt(75);
+                HP=40+rand.nextInt(36);
             }
         }
     }
